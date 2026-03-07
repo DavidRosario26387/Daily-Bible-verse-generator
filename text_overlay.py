@@ -99,6 +99,9 @@ def generate_verse_image(image_bytes, verse, reference) -> bytes:
         if verse_h < height * 0.35:
             break
 
+        if font_size <= 10:
+            break
+
         font_size -= 2
         ref_size = int(font_size * 0.55)
 

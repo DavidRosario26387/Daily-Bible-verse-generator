@@ -8,11 +8,19 @@ def get_tmrw_reading():
     date = (datetime.now() + timedelta(days=1)).strftime("%m%d%y")
     url = f"https://bible.usccb.org/bible/readings/{date}.cfm"
 
-    html = requests.get(url).text
+    try:
+        html = requests.get(url, timeout=15).text
+    except requests.RequestException as e:
+        raise Exception(f"Failed to fetch readings from USCCB: {e}")
+
     soup = BeautifulSoup(html, "html.parser")
     data = {}
     # title
-    title = soup.find("div", class_="b-lectionary").find("h2").get_text(strip=True)
+    lectionary_div = soup.find("div", class_="b-lectionary")
+    if not lectionary_div:
+        raise Exception("Could not find lectionary section on USCCB page")
+    h2 = lectionary_div.find("h2")
+    title = h2.get_text(strip=True) if h2 else ""
     data["title"] = title
     # each reading block
     for block in soup.find_all("div", class_="b-verse"):
