@@ -76,34 +76,38 @@ def generate_verse_image(image_bytes, verse, reference) -> bytes:
     padding_x = int(width * 0.08)
     max_width = width - padding_x * 2
 
-    font_size = int(height * 0.055)
-    ref_size = int(font_size * 0.55)
+    # Fixed, reasonable font size — small enough not to cover image features.
+    # Cap at 52px regardless of image resolution to keep text unobtrusive.
+    MAX_FONT_SIZE = 52
+    font_size = min(int(height * 0.028), MAX_FONT_SIZE)
+    ref_size = int(font_size * 0.60)
 
-    while True:
+    verse_font = ImageFont.truetype(FONT_PATH, font_size)
+    ref_font = ImageFont.truetype(FONT_PATH, ref_size)
 
+    wrapped = wrap_text_pixel(draw, verse, verse_font, max_width)
+
+    bbox = draw.multiline_textbbox(
+        (0, 0),
+        wrapped,
+        font=verse_font,
+        spacing=10
+    )
+
+    verse_w = bbox[2] - bbox[0]
+    verse_h = bbox[3] - bbox[1]
+
+    # Safety: if the wrapped text still exceeds 28% of the image height at the
+    # chosen font size, shrink gradually until it fits or reaches the minimum.
+    while verse_h >= height * 0.28 and font_size > 10:
+        font_size -= 2
+        ref_size = int(font_size * 0.60)
         verse_font = ImageFont.truetype(FONT_PATH, font_size)
         ref_font = ImageFont.truetype(FONT_PATH, ref_size)
-
         wrapped = wrap_text_pixel(draw, verse, verse_font, max_width)
-
-        bbox = draw.multiline_textbbox(
-            (0, 0),
-            wrapped,
-            font=verse_font,
-            spacing=10
-        )
-
+        bbox = draw.multiline_textbbox((0, 0), wrapped, font=verse_font, spacing=10)
         verse_w = bbox[2] - bbox[0]
         verse_h = bbox[3] - bbox[1]
-
-        if verse_h < height * 0.35:
-            break
-
-        if font_size <= 10:
-            break
-
-        font_size -= 2
-        ref_size = int(font_size * 0.55)
 
     if position == "top":
         verse_y = int(height * 0.12)

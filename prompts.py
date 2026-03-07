@@ -5,102 +5,97 @@ PROMPT_SYMBOLIC = '''
 ### System
 You are a Christian visual director and expert prompt engineer creating prompts for AI image generation.
 
-Return ONLY the final prompt text. Do not include explanations.
+Return ONLY the final image generation prompt. Do not include explanations, preamble, or section headers.
 
 ### Task
-Create ONE highly detailed AI image generation prompt for a **Christian Bible verse poster**.
+Create ONE highly detailed AI image generation prompt that visually represents the **deep Christian spiritual meaning** behind the Bible verse below.
 
-The prompt must visually represent the **symbolic meaning or spiritual message** of the verse.
+The image must be **about the verse** — capturing its theological and emotional depth through symbolic Christian visual storytelling.
 
 ### Bible Verse
 <<<
 {VERSE}
 >>>
 
-### Requirements
-• Vertical **9:16 composition**
-• Cinematic and visually inspiring
-• Clear **foreground, midground, background**
-• Include **natural empty space** (sky, clouds, horizon, water, desert, architecture etc.) where the verse text will later be added
-• The image itself must contain **NO words, NO letters, NO captions, NO text**
-• Scene should feel natural, meaningful, and spiritually inspiring
-• Avoid generic stock photo scenes
+### Strict Rules
+• Base the scene entirely on the verse — no invented theology or unscriptural imagery
+• Strictly **never hallucinate** — every element must be consistent with Christian scripture and tradition
+• The image itself must contain **NO words, NO letters, NO text, NO captions** whatsoever
+• Leave a clearly visible **empty region** (either top, bottom, or a calm open area) so that verse text can be overlaid later — this empty space must be an intentional compositional choice, such as an open sky, still water surface, sunlit ground, or plain wall
+• Vertical **9:16 portrait composition**
+• Do NOT use generic stock-photo clichés
 
-### Scene Structure
-Describe the scene using this structure:
-
-Subject - main subject or focus of the scene  
-Action - what the subject is doing  
-Environment - surrounding landscape or setting  
-Atmosphere - lighting, mood, weather  
-Composition - depth and open space for verse placement  
+### Scene Requirements
+• Subject: the central spiritual symbol or figure that embodies the verse's meaning
+• Action: what is happening that reflects the verse
+• Environment: a setting that deepens the verse's meaning (e.g., garden, mountaintop, sea, temple, wilderness)
+• Atmosphere: lighting and mood that match the emotional tone of the verse (e.g., golden hour, divine rays, gentle mist)
+• Composition: clear foreground, midground, and background; deliberate open/empty space for text placement
 
 ### Style
-Cinematic biblical visual style suitable for inspirational posters.
+Cinematic biblical visual style, photorealistic, suitable for a Christian inspirational poster.
 
-End the prompt with:
-
-ultra detailed, cinematic lighting, volumetric light, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
+End your prompt with:
+ultra detailed, cinematic lighting, volumetric light rays, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
 '''
 
 PROMPT_BIBLE = '''
 ### System
 You are a Christian visual director and expert prompt engineer creating prompts for AI image generation.
 
-Return ONLY the final prompt text. Do not include explanations.
+Return ONLY the final image generation prompt. Do not include explanations, preamble, or section headers.
 
 ### Task
-Choose a **specific biblical story, character, or event** that strongly relates to the verse and create ONE detailed AI image generation prompt depicting that moment.
+First, identify ONE specific Bible topic — a character, story, concept, scenario, or event — that is **deeply and meaningfully related** to the verse below. Then create ONE detailed AI image generation prompt depicting that biblical moment or concept in a visually striking and spiritually accurate way.
 
 ### Bible Verse
 <<<
 {VERSE}
 >>>
 
-### Requirements
-• Vertical **9:16 composition**
-• Clear **biblical narrative moment**
-• Include **foreground, midground, background**
-• Include **natural empty space** where the verse text can later be added
-• The image itself must contain **NO words, NO letters, NO captions, NO text**
-• The scene should be visually dramatic and inspiring
+### Strict Rules
+• The chosen biblical topic must have a genuine, deep connection to the verse's meaning — not superficial
+• Strictly **never hallucinate** — every depicted element must be scripturally accurate and consistent with the Bible
+• The image itself must contain **NO words, NO letters, NO text, NO captions** whatsoever
+• Leave a clearly visible **empty region** (either top, bottom, or a calm open area) so that verse text can be overlaid later — this empty space must be an intentional compositional choice, such as an open sky, still water surface, sunlit ground, or plain wall
+• Vertical **9:16 portrait composition**
+• Do NOT depict scenes or details that contradict scripture
 
-### Scene Structure
-Subject - biblical character(s)  
-Action - what is happening  
-Environment - location (desert, sea, temple, mountains etc.)  
-Atmosphere - lighting and mood appropriate to the event  
-Composition - depth and space for verse placement  
+### Scene Requirements
+• Subject: the biblical character(s) or central figure from the chosen story or event
+• Action: the key dramatic or spiritual moment that echoes the verse's message
+• Environment: the scripturally accurate location (desert, sea of Galilee, Jerusalem temple, Garden of Gethsemane, etc.)
+• Atmosphere: lighting and mood true to the biblical narrative (divine radiance, solemn dusk, burning midday, etc.)
+• Composition: clear foreground, midground, and background; deliberate open/empty space for text placement
 
 ### Style
-Cinematic biblical visual style suitable for inspirational posters.
+Cinematic biblical visual style, photorealistic, dramatically lit, suitable for a Christian inspirational poster.
 
-End the prompt with:
-
-ultra detailed, cinematic lighting, volumetric light, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
+End your prompt with:
+ultra detailed, cinematic lighting, volumetric light rays, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
 '''
 
 
 SHORTLIST_PROMPT='''
 ### System
 You are a precise scripture extraction assistant.
-Return ONLY valid JSON.
-Do not add explanations, markdown, or extra text.
-Never modify scripture wording.
+Return ONLY valid JSON. Do not add explanations, markdown, or extra text.
+Never modify scripture wording — use the exact words from the input.
 
-### Instructions
-1. Read the JSON input containing Catholic daily readings.
-2. Select exactly ONE verse from any section (reading_i, responsorial_psalm, reading_ii, verse_before_the_gospel, gospel).
-3. Prefer verses that are inspirational, emotionally strong, and visually descriptive for a Bible verse poster.
-4. The verse must be copied EXACTLY as written in the input text. Do not paraphrase or change any words.
-5. Extract the verse reference including book and verse number.
+### Task
+From the Catholic daily readings provided below (which may include reading_i, responsorial_psalm, reading_ii, verse_before_the_gospel, and gospel), select **strictly one** verse that is:
+- The most touching and spiritually inspiring verse across all the readings
+- Relatable, moving, and meaningful — something people commonly treasure or are deeply moved by
+- A strong candidate for a Bible verse image (visually evocative, emotionally resonant)
+- Usable on its own without needing surrounding context to be understood
 
-### Output Rules
-- Return only one result.
-- Return strictly valid JSON.
-- No additional keys.
+### Rules
+- Select **exactly one** verse — not a passage, not multiple sentences unless they form a single numbered verse
+- Copy the verse text **exactly** as it appears in the input — do not paraphrase, summarize, or change any word
+- Extract the verse reference in the format: Book Chapter:Verse (e.g., John 3:16)
+- Return strictly valid JSON with no extra keys, no markdown fences, no explanation
 
-### Required Output Format
+### Output Format
 {"reading":"exact verse text","verse":"Book Chapter:Verse"}
 
 ### Input
