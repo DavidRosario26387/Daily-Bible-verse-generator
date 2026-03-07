@@ -1,10 +1,13 @@
 import prompts,generate_image,text_overlay,queries,db_conn
 import logging
+logging.basicConfig(level=logging.INFO,format="%(asctime)s | %(levelname)s | %(message)s")
+
 if __name__=='__main__':
     conn = None
     try:
         logging.info("Starting service...")
         verse,reference = prompts.return_verse() # llm endpoint caution
+        logging.info(f"Selected verse: {reference}")
         prompt1=prompts.return_img_prompt1(verse) # llm endpoint caution
         logging.info("Default prompt generated")
         prompt2=prompts.return_img_prompt2(verse) # llm endpoint caution
@@ -28,7 +31,7 @@ if __name__=='__main__':
     except Exception as e:
         if conn:
             conn.rollback()
-            logging.info("Error rolling back")
+            logging.error(f"Pipeline failed: {e}")
 
         conn = conn or db_conn.get_connection()
 
