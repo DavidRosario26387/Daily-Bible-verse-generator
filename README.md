@@ -89,24 +89,6 @@ Configure these in **Settings → Secrets and variables → Actions**:
 
 You can also run the workflow on demand from the **Actions** tab by clicking **Run workflow**.
 
-## Database Schema
-
-```sql
-CREATE TABLE IF NOT EXISTS daily_verses (
-    id              SERIAL PRIMARY KEY,
-    day             DATE UNIQUE NOT NULL,
-    reference       TEXT NOT NULL,
-    verse           TEXT NOT NULL,
-    prompt_general  TEXT,
-    prompt_bible    TEXT,
-    img1            BYTEA,
-    img2            BYTEA,
-    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status          TEXT,
-    error_message   TEXT
-);
-```
-
 ## Fonts
 
 The text overlay uses [EB Garamond](https://fonts.google.com/specimen/EB+Garamond) (`fonts/EBGaramond-VariableFont_wght.ttf`), which is included in the repository.
