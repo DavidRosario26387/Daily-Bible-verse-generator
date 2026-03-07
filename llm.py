@@ -17,7 +17,9 @@ def call_llm(prompt, expect_json=False, retries=3):
         text = None
         for item in response.get("output", []):
             if item.get("type") == "message":
-                text = item["content"][0]["text"]
+                content = item.get("content", [])
+                if content:
+                    text = content[0].get("text")
                 break
         if text is None:
             continue

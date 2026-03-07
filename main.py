@@ -29,9 +29,9 @@ if __name__=='__main__':
         logging.info("Saved to DB")
 
     except Exception as e:
+        logging.error(f"Pipeline failed: {e}")
         if conn:
             conn.rollback()
-            logging.error(f"Pipeline failed: {e}")
 
         conn = conn or db_conn.get_connection()
 

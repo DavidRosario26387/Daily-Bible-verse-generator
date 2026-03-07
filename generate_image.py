@@ -30,7 +30,10 @@ def generate(prompt: str) -> bytes:
         data = status_res.json().get("data", {})
         status = data.get("status")
         if status == "COMPLETED":
-            image_url = data["generated"][0]
+            generated = data.get("generated")
+            if not generated:
+                raise Exception("Image generation completed but no image URL returned")
+            image_url = generated[0]
             break
         if status == "FAILED":
             raise Exception("Image generation failed")
