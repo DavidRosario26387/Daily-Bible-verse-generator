@@ -9,9 +9,11 @@ if __name__=='__main__':
         verse,reference = prompts.return_verse() # llm endpoint caution
         logging.info(f"Selected verse: {reference}")
         prompt1=prompts.return_img_prompt1(verse) # llm endpoint caution
+        logging.info("Prompt1: %s", prompt1)
         logging.info("Default prompt generated")
         prompt2=prompts.return_img_prompt2(verse) # llm endpoint caution
         logging.info("Bible prompt generated")
+        logging.info("Prompt2: %s", prompt2)
         
         image_bytes1 = generate_image.generate(prompt1)
         logging.info("Image 1 generated successfully")
