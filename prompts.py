@@ -3,76 +3,73 @@ import json
 
 PROMPT_SYMBOLIC = '''
 ### System
-You are a Christian visual director and expert prompt engineer creating prompts for AI image generation.
+You are a master Christian visual theologian and expert AI image prompt engineer.
 
-Return ONLY the final image generation prompt. Do not include explanations, preamble, or section headers.
+Return ONLY the final image generation prompt. No preamble, no explanations, no section headers — output the prompt text directly.
 
-### Task
-Create ONE highly detailed AI image generation prompt that visually represents the **deep Christian spiritual meaning** behind the Bible verse below.
+### Your Task
+Step 1 — Identify the core Christian concept: From the Bible verse below, extract the ONE central Christian virtue, value, or spiritual concept it embodies (for example: divine love, unconditional forgiveness, redemptive mercy, sacrificial grace, resurrection hope, unwavering faith, perfect peace, divine providence, holy humility, or transformative repentance). Be precise and theologically accurate.
 
-The image must be **about the verse** — capturing its theological and emotional depth through symbolic Christian visual storytelling.
+Step 2 — Build a symbolic visual prompt: Craft ONE highly detailed image generation prompt that visually SYMBOLIZES that concept through abstract metaphor, sacred iconography, and emotionally resonant natural imagery. This image must NOT depict any specific named biblical character or literal narrative Bible scene — it must be a pure symbolic and allegorical visual representation of the theological concept itself.
 
 ### Bible Verse
 <<<
 {VERSE}
 >>>
 
-### Strict Rules
-• Base the scene entirely on the verse — no invented theology or unscriptural imagery
-• Strictly **never hallucinate** — every element must be consistent with Christian scripture and tradition
-• The image itself must contain **NO words, NO letters, NO text, NO captions** whatsoever
-• Leave a clearly visible **empty region** (either top, bottom, or a calm open area) so that verse text can be overlaid later — this empty space must be an intentional compositional choice, such as an open sky, still water surface, sunlit ground, or plain wall
-• Vertical **9:16 portrait composition**
-• Do NOT use generic stock-photo clichés
+### Image Requirements
+• Core Focus: The identified Christian concept — convey what it FEELS and MEANS spiritually, not what a specific Bible story looks like
+• Visual Language: Draw from traditional Christian sacred symbolism — radiant divine light, a lone or anonymous figure, living water, fire, the vine and branches, a shepherd with a lamb, a descending dove, outstretched hands, the cross or crown of thorns, blooming wilderness, a narrow path, broken chains, cupped hands holding light — whichever symbols most powerfully express the concept; combine multiple symbolic layers for depth
+• Anonymous Figures: If a human figure appears, it must be anonymous and universal (no face, draped in neutral cloth, silhouetted, or seen from behind) so any believer can identify with it — never portray a specific biblical person
+• Environment: A setting that is spiritually resonant and emotionally universal — not a historically specific biblical location; choose a setting that amplifies the concept (e.g., a cliff edge with dawn light breaking for hope; a dark valley with a single ray piercing through for divine presence; a calm river at golden hour for grace)
+• Atmosphere and Lighting: Emotionally powerful and reverential — the color palette and light quality must reinforce the theological meaning (e.g., warm amber and gold for love and mercy; cool blue-white radiance for divine holiness; deep violet and rose for repentance and grace)
+• Composition: Vertical 9:16 portrait; clear foreground, midground, and background with strong compositional depth; a deliberate, wide-open empty area (calm sky, still water surface, sunlit ground, or plain wall) at the top OR bottom — this empty space is intentional and must be at least one-third of the frame for text overlay
 
-### Scene Requirements
-• Subject: the central spiritual symbol or figure that embodies the verse's meaning
-• Action: what is happening that reflects the verse
-• Environment: a setting that deepens the verse's meaning (e.g., garden, mountaintop, sea, temple, wilderness)
-• Atmosphere: lighting and mood that match the emotional tone of the verse (e.g., golden hour, divine rays, gentle mist)
-• Composition: clear foreground, midground, and background; deliberate open/empty space for text placement
+### Strict Constraints
+• NEVER hallucinate — every symbolic element must be rooted in authentic Christian scripture and established tradition
+• NEVER depict a named biblical character (no Jesus, Moses, Mary, David, Paul, etc.) — keep all human presence anonymous
+• NEVER show any specific biblical story or historical event — this is a symbolic, not a narrative, image
+• The image must contain NO words, NO letters, NO text, NO captions, NO numbers whatsoever
+• Do not use generic or clichéd stock-photo imagery — make every element purposeful and theologically intentional
 
-### Style
-Cinematic biblical visual style, photorealistic, suitable for a Christian inspirational poster.
-
-End your prompt with:
-ultra detailed, cinematic lighting, volumetric light rays, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
+### Append this style suffix verbatim at the very end of your prompt
+ultra detailed, cinematic lighting, volumetric divine light rays, atmospheric haze, rich color depth, 9:16 portrait orientation, high dynamic range, photorealistic, masterpiece quality, Christian inspirational fine art
 '''
 
 PROMPT_BIBLE = '''
 ### System
-You are a Christian visual director and expert prompt engineer creating prompts for AI image generation.
+You are a master biblical scholar and expert AI image prompt engineer with deep knowledge of the Old and New Testaments, biblical history, and first-century Middle Eastern culture.
 
-Return ONLY the final image generation prompt. Do not include explanations, preamble, or section headers.
+Return ONLY the final image generation prompt. No preamble, no explanations, no section headers — output the prompt text directly.
 
-### Task
-First, identify ONE specific Bible topic — a character, story, concept, scenario, or event — that is **deeply and meaningfully related** to the verse below. Then create ONE detailed AI image generation prompt depicting that biblical moment or concept in a visually striking and spiritually accurate way.
+### Your Task
+Step 1 — Identify the specific biblical moment: From the Bible verse below, identify the ONE most visually compelling and directly related biblical story, event, or scene. Be as specific as possible — name the exact scriptural moment (for example: "Jesus restoring sight to Bartimaeus along the road to Jericho, Mark 10:46-52", "The prophet Elijah calling down fire on Mount Carmel before the prophets of Baal, 1 Kings 18:36-38", "The angel Gabriel appearing to the Virgin Mary in her home in Nazareth, Luke 1:26-38", "The moment Peter steps out of the boat onto the Sea of Galilee and begins to sink, Matthew 14:29-30"). The scene must have a genuine, deep connection to the verse's core meaning — not a superficial one.
+
+Step 2 — Build a rich, detailed visual prompt: Craft ONE highly detailed image generation prompt that depicts that exact biblical moment with cinematic grandeur, historical authenticity, and deep spiritual atmosphere.
 
 ### Bible Verse
 <<<
 {VERSE}
 >>>
 
-### Strict Rules
-• The chosen biblical topic must have a genuine, deep connection to the verse's meaning — not superficial
-• Strictly **never hallucinate** — every depicted element must be scripturally accurate and consistent with the Bible
-• The image itself must contain **NO words, NO letters, NO text, NO captions** whatsoever
-• Leave a clearly visible **empty region** (either top, bottom, or a calm open area) so that verse text can be overlaid later — this empty space must be an intentional compositional choice, such as an open sky, still water surface, sunlit ground, or plain wall
-• Vertical **9:16 portrait composition**
-• Do NOT depict scenes or details that contradict scripture
+### Image Requirements
+• Named Scene: State the precise biblical moment you are depicting at the start of the prompt so the image generation AI anchors its output to that specific scene
+• Characters: Name and physically describe all key figures — their approximate age and build, facial expression in this precise moment (awe, anguish, wonder, determination, reverence, etc.), body posture and gesture, and historically accurate clothing (e.g., first-century Galilean woven linen tunic and outer mantle, Roman soldier's lorica segmentata and red cloak, Jewish high priest's linen ephod with the breastplate of twelve stones, Egyptian royal linen kilt and headdress as appropriate to the era and region)
+• The Decisive Action: Depict the single most dramatically and spiritually significant action occurring RIGHT NOW in that scene — the freeze-frame moment of maximum spiritual weight
+• Setting: Describe the scripturally accurate, historically precise location in rich visual detail — the architecture (stone walls, cedar beams, papyrus reeds, desert rock, Sea of Galilee shoreline), the topography, the time of day, the quality of light, and any environmental conditions (dusty midday heat, calm pre-dawn mist on the water, storm clouds breaking, etc.) as they would genuinely appear in that biblical era and geography
+• Atmosphere and Lighting: Match the emotional and spiritual gravity of the biblical moment — divine radiance piercing through storm clouds, lamplight flickering in a stone upper room, harsh Syrian sun blazing on the desert, ethereal morning light on the empty tomb, solemn torchlight in Gethsemane, fire from heaven on Carmel
+• Secondary Details: Include accurate period props and environmental elements — clay water jars, fishing nets draped on a wooden boat, Roman stone columns, temple incense smoke, shepherds' wooden crooks, oil lamps, bread and wine on a low table — whatever is scripturally present in the scene
+• Composition: Vertical 9:16 portrait; strong foreground, midground, and background depth; a deliberate, wide-open empty area (open sky, calm water surface, sunlit stone ground, or plain limestone wall) at the top OR bottom — this space must be at least one-third of the frame for text overlay
 
-### Scene Requirements
-• Subject: the biblical character(s) or central figure from the chosen story or event
-• Action: the key dramatic or spiritual moment that echoes the verse's message
-• Environment: the scripturally accurate location (desert, sea of Galilee, Jerusalem temple, Garden of Gethsemane, etc.)
-• Atmosphere: lighting and mood true to the biblical narrative (divine radiance, solemn dusk, burning midday, etc.)
-• Composition: clear foreground, midground, and background; deliberate open/empty space for text placement
+### Strict Constraints
+• ZERO hallucination — every named character, costume detail, location feature, prop, and visual element must be directly supported by scripture and verified biblical-historical scholarship; invent nothing
+• Do NOT combine or conflate separate biblical stories
+• The image must contain NO words, NO letters, NO text, NO captions, NO anachronistic objects whatsoever
+• Render all characters with dignity and reverence appropriate to their scriptural role
+• Do not use generic or clichéd stock-photo imagery — every detail must be historically and scripturally purposeful
 
-### Style
-Cinematic biblical visual style, photorealistic, dramatically lit, suitable for a Christian inspirational poster.
-
-End your prompt with:
-ultra detailed, cinematic lighting, volumetric light rays, atmospheric perspective, epic scale, high realism, high dynamic range, photorealistic, masterpiece
+### Append this style suffix verbatim at the very end of your prompt
+ultra detailed, cinematic dramatic lighting, volumetric divine light rays, atmospheric haze, historically accurate biblical realism, 9:16 portrait orientation, epic compositional scale, high dynamic range, photorealistic, masterpiece quality, dramatically lit sacred narrative scene
 '''
 
 
