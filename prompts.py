@@ -20,14 +20,12 @@ Step 2 — Build a symbolic visual prompt: Craft ONE highly detailed image gener
 ### Image Requirements
 • Core Focus: The identified Christian concept — convey what it FEELS and MEANS spiritually, not what a specific Bible story looks like
 • Visual Language: Draw from traditional Christian sacred symbolism — radiant divine light, a lone or anonymous figure, living water, fire, the vine and branches, a shepherd with a lamb, a descending dove, outstretched hands, the cross or crown of thorns, blooming wilderness, a narrow path, broken chains, cupped hands holding light — whichever symbols most powerfully express the concept; combine multiple symbolic layers for depth
-• Anonymous Figures: If a human figure appears, it must be anonymous and universal (no face, draped in neutral cloth, silhouetted, or seen from behind) so any believer can identify with it — never portray a specific biblical person
 • Environment: A setting that is spiritually resonant and emotionally universal — not a historically specific biblical location; choose a setting that amplifies the concept (e.g., a cliff edge with dawn light breaking for hope; a dark valley with a single ray piercing through for divine presence; a calm river at golden hour for grace)
 • Atmosphere and Lighting: Emotionally powerful and reverential — the color palette and light quality must reinforce the theological meaning (e.g., warm amber and gold for love and mercy; cool blue-white radiance for divine holiness; deep violet and rose for repentance and grace)
 • Composition: Vertical 9:16 portrait; clear foreground, midground, and background with strong compositional depth; a deliberate, wide-open empty area (calm sky, still water surface, sunlit ground, or plain wall) at the top OR bottom — this empty space is intentional and must be at least one-third of the frame for text overlay
 
 ### Strict Constraints
 • NEVER hallucinate — every symbolic element must be rooted in authentic Christian scripture and established tradition
-• NEVER depict a named biblical character (no Jesus, Moses, Mary, David, Paul, etc.) — keep all human presence anonymous
 • NEVER show any specific biblical story or historical event — this is a symbolic, not a narrative, image
 • The image must contain NO words, NO letters, NO text, NO captions, NO numbers whatsoever
 • Do not use generic or clichéd stock-photo imagery — make every element purposeful and theologically intentional
