@@ -101,12 +101,12 @@ def return_verse():
     return verse_text, verse_reference
 
 def return_img_prompt1(verse):
-    prompt1=PROMPT_SYMBOLIC.replace("{VERSE}",verse)
+    prompt1=PROMPT_BIBLE.replace("{VERSE}",verse)
     p1=llm.call_llm(prompt1)
     return p1
 
 def return_img_prompt2(verse):
-    prompt2=PROMPT_BIBLE.replace("{VERSE}",verse)
+    prompt2=PROMPT_SYMBOLIC.replace("{VERSE}",verse)
     p2=llm.call_llm(prompt2)
     return p2
 
