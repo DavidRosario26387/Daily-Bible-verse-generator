@@ -15,15 +15,17 @@ if __name__=='__main__':
         logging.info("Bible prompt generated")
         logging.info("Prompt2: %s", prompt2)
         
-        image_bytes1 = generate_image.generate(prompt1)
+        #image_bytes1 = generate_image.generate(prompt1)
+        final_image_bytes1=generate_image.generate(prompt1)
         logging.info("Image 1 generated successfully")
-        final_image_bytes1 = text_overlay.generate_verse_image(image_bytes1,verse,reference)
-        logging.info("Image 1 text overlay successful")
+        # final_image_bytes1 = text_overlay.generate_verse_image(image_bytes1,verse,reference)
+        # logging.info("Image 1 text overlay successful")
 
-        image_bytes2 = generate_image.generate(prompt2)
+        #image_bytes2 = generate_image.generate(prompt2)
+        final_image_bytes2=generate_image.generate(prompt2)
         logging.info("Image 2 generated successfully")
-        final_image_bytes2 = text_overlay.generate_verse_image(image_bytes2,verse,reference)
-        logging.info("Image 2 text overlay successful")
+        # final_image_bytes2 = text_overlay.generate_verse_image(image_bytes2,verse,reference)
+        # logging.info("Image 2 text overlay successful")
 
         conn = db_conn.get_connection()
         logging.info("Connected to DB")
