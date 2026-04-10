@@ -70,7 +70,7 @@ SHORTLIST_PROMPT = """
 
 ### Task
 Select exactly ONE verse that is most inspiring and suitable for a poster. It shoudl also be short and accomodatable within an image, choose one inspiring, impactful verse from this.
-
+Take only from reading 1, reading 2 or gospel no where else.
 ### Rules
 - Only ONE verse
 - Copy EXACT text
