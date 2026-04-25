@@ -9,7 +9,7 @@ groq_api_key=os.getenv("llm_api_key")
 def call_llm(prompt, expect_json=False, retries=3):
     url = "https://api.groq.com/openai/v1/responses"
     headers= {"Content-Type": "application/json","Authorization": f"Bearer {groq_api_key}"}
-    data = {"model": "llama-3.3-70b-versatile","temperature": 0.8,"input": prompt}
+    data = {"model": "llama-3.3-70b-versatile","temperature": 0.5,"input": prompt}
     for attempt in range(retries):
         res = requests.post(url, headers=headers, json=data, timeout=30)
         res.raise_for_status()

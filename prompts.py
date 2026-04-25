@@ -33,34 +33,30 @@ ultra detailed, cinematic lighting, volumetric divine light rays, atmospheric ha
 """
 
 PROMPT_BIBLE = """
-### System
-You generate historically grounded Bible scene image prompts.
+You generate high-quality biblical image prompts.
 
-Return ONLY the final prompt. No explanations.
+Return ONLY the final prompt.
 
-### Verse
+Verse:
 {VERSE}
 
-### Task
-Choose ONE real biblical moment, character, or setting that directly matches the verse.
+Task:
+Create ONE clear scene from a real biblical moment that reflects the verse.
 
-### Requirements
-- Must be a real event/person/place from the Bible
-- Do NOT mix multiple stories
-- Keep scene simple and focused (1 main action)
-- Clothing, environment and props must be historically plausible (ancient Israel / Roman era)
+Rules:
+- One subject, one action (no clutter)
+- Historically accurate (ancient Israel / Roman era)
 - No text in image
-- Include natural empty space for verse placement
+- Must include natural negative space (sky/light/background)
 
-### Output style (must follow)
-- 2-4 sentences only
-- Sentence 1: main subject + action
-- Sentence 2: environment + setting
-- Sentence 3: lighting + composition
-- Sentence 4 (optional): realism details
+Structure (strict):
+1. Subject + action
+2. Environment + setting
+3. Lighting + composition
+4. Style + color + quality
 
-### Style suffix (append exactly)
-ultra detailed, cinematic dramatic lighting, volumetric divine light rays, atmospheric haze, historically accurate biblical realism, 9:16 portrait orientation, epic compositional scale, high dynamic range, photorealistic, masterpiece quality, dramatically lit sacred narrative scene
+Style constraints (append naturally, not as a list):
+photorealistic, cinematic lighting, warm natural color palette, soft volumetric light, shallow depth of field, high dynamic range, ultra detailed, 9:16 vertical composition, clean framing, professional photography, masterpiece quality
 """
 
 
